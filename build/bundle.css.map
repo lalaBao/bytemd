@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../../../Editor.svelte",
+    "../../../../Toolbar.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  import { onMount } from 'svelte';\n  import codemirror from 'codemirror';\n  import 'codemirror/mode/markdown/markdown.js';\n  import Toolbar from './Toolbar.svelte';\n  import Viewer from './Viewer.svelte';\n\n  export let source;\n  export let codemirrorConfig;\n\n  let textarea;\n  let cm;\n\n  onMount(() => {\n    cm = codemirror.fromTextArea(textarea, {\n      mode: 'markdown',\n      lineNumbers: true,\n      lineWrapping: true,\n      ...codemirrorConfig\n    });\n    cm.setValue(source);\n    cm.on('change', () => {\n      source = cm.getValue();\n    });\n  });\n</script>\n\n<style>\n  .bytemd-container {\n    display: flex;\n    height: 300px;\n  }\n  .bytemd-viewer {\n    padding: 20px;\n    flex: 1;\n    overflow: auto;\n  }\n  :global(.CodeMirror) {\n    flex: 1;\n    height: 100%;\n  }\n</style>\n\n<Toolbar {cm} />\n<div class=\"bytemd-container\">\n  <textarea bind:this={textarea} />\n  <div class=\"bytemd-viewer\">\n    <Viewer {source} />\n  </div>\n</div>\n",
+    "<script>\n  export let cm;\n\n  function handleDec(decorator) {\n    if (cm.somethingSelected()) {\n      cm.replaceSelection(decorator + cm.getSelection() + decorator);\n    } else {\n      const { anchor, head } = cm.findWordAt(cm.getCursor());\n      const word = cm.getRange(anchor, head);\n      cm.replaceRange(decorator + word + decorator, anchor, head);\n    }\n    cm.focus();\n  }\n  function handleBold() {\n    return handleDec('**');\n  }\n  function handleItalic() {\n    return handleDec('*');\n  }\n  function handleStrikethrough() {\n    return handleDec('~~');\n  }\n  function handleBlockquote() {}\n</script>\n\n<style>\n  div {\n    display: flex;\n    padding: 10px;\n    border: 1px solid #eee;\n  }\n</style>\n\n<div>\n  <button on:click={handleBold}>bold</button>\n  <button on:click={handleItalic}>italic</button>\n  <button on:click={handleStrikethrough}>strikethrough</button>\n  <button on:click={handleBlockquote}>blockquote</button>\n\n</div>\n"
+  ],
+  "names": [],
+  "mappings": "AA4BE,iBAAiB,eAAC,CAAC,AACjB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,KAAK,AACf,CAAC,AACD,cAAc,eAAC,CAAC,AACd,OAAO,CAAE,IAAI,CACb,IAAI,CAAE,CAAC,CACP,QAAQ,CAAE,IAAI,AAChB,CAAC,AACO,WAAW,AAAE,CAAC,AACpB,IAAI,CAAE,CAAC,CACP,MAAM,CAAE,IAAI,AACd,CAAC;ACdD,GAAG,cAAC,CAAC,AACH,OAAO,CAAE,IAAI,CACb,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,AACxB,CAAC"
+}
