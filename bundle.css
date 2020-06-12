@@ -1756,5 +1756,5 @@ div.CodeMirror-dragcursors {
 /* Help users use markselection to safely style text background */
 span.CodeMirror-selectedtext { background: none; }
 
-.bytemd.svelte-1g00nkz{border:1px solid #eee;display:flex;flex-direction:column}.bytemd-body.svelte-1g00nkz{flex-grow:1;display:flex;overflow:auto}.bytemd-editor.svelte-1g00nkz{flex:1;overflow:hidden;height:100%}.bytemd-editor.svelte-1g00nkz .CodeMirror{height:100%}.bytemd-viewer.svelte-1g00nkz{padding:20px;flex:1;overflow:auto;border-left:1px solid #eee}.hidden.svelte-1g00nkz{display:none}
+.bytemd.svelte-d440xd{border:1px solid #eee;display:flex;flex-direction:column}.bytemd-body.svelte-d440xd{flex-grow:1;display:flex;overflow:auto}.bytemd-editor.svelte-d440xd{flex:1;overflow:hidden;height:100%}.bytemd-editor.svelte-d440xd .CodeMirror{height:100%;padding:20px;box-sizing:border-box;font-size:14px}.bytemd-viewer.svelte-d440xd{padding:20px;flex:1;overflow:auto;border-left:1px solid #eee}.hidden.svelte-d440xd{display:none}
 div.svelte-1hscxqk{padding:10px 0}.bytemd{height:90vh !important}
