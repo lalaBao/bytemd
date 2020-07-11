@@ -2467,4 +2467,19 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 }
 
 
+.image-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 200ms;
+}
+.image-viewer img {
+  position: absolute;
+  cursor: zoom-out;
+}
+
 div.svelte-1hscxqk{padding:10px 0}.bytemd{height:90vh !important}
