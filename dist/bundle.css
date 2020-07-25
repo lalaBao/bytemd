@@ -358,7 +358,6 @@ span.CodeMirror-selectedtext { background: none; }
 .bytemd-toolbar {
   display: flex;
   padding: 4px;
-  background-color: #f6f8fa;
   border-bottom: 1px solid #e1e4e8;
 }
 .bytemd-toolbar > span {
@@ -374,9 +373,10 @@ span.CodeMirror-selectedtext { background: none; }
   padding: 4px;
   fill: #586069;
 }
-.bytemd-toolbar span:hover svg {
+.bytemd-toolbar > span:hover svg {
   fill: #0366d6;
 }
+
 .bytemd-tabs {
   display: flex;
 }
@@ -390,9 +390,11 @@ span.CodeMirror-selectedtext { background: none; }
 .bytemd-tabs span.active {
   color: #0366d6;
 }
+
 .tippy-box {
   font-size: 13px;
 }
+
 .bytemd-info {
   position: absolute;
 }
@@ -402,6 +404,7 @@ span.CodeMirror-selectedtext { background: none; }
   display: flex;
   overflow: auto;
 }
+
 .bytemd-editor {
   flex: 1;
   overflow: hidden;
@@ -412,8 +415,13 @@ span.CodeMirror-selectedtext { background: none; }
   padding: 20px;
   box-sizing: border-box;
   font-size: 14px;
+  line-height: 1.5;
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
 }
+.bytemd-editor .CodeMirror pre.CodeMirror-placeholder {
+  color: #959da5;
+}
+
 .bytemd-preview {
   flex: 1;
   overflow: auto;
@@ -2491,19 +2499,4 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 }
 
 
-.image-viewer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10000;
-  background-color: rgba(0, 0, 0, 0.8);
-  transition: opacity 200ms;
-}
-.image-viewer img {
-  position: absolute;
-  cursor: zoom-out;
-}
-
-.line.svelte-pqgg1h{margin:10px 0}.bytemd{height:calc(100vh - 100px)}
+.line.svelte-1o5s97j{margin:10px 0}
