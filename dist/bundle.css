@@ -1489,121 +1489,121 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
 @font-face {
   font-family: 'KaTeX_AMS';
-  src: url(dist/d4531cf7ff335a5e1d2c2caa803e2592.woff2) format('woff2'), url(dist/b1489df1556f8c6612594025ccdca2b0.woff) format('woff'), url(dist/f80d9eaff7bad6dad7396a98fc016ce2.ttf) format('truetype');
+  src: url(dist/cf3cce94764c737eac33ed35700a6859.woff2) format('woff2'), url(dist/25df3eee39c479c5dbd82a5a27f5c862.woff) format('woff'), url(dist/1436d720bab5540f6042b9dd39f05ee4.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Caligraphic';
-  src: url(dist/f046a374a80bb69ba397ad705f607490.woff2) format('woff2'), url(dist/7ce7636b90003f983253ab36004ed376.woff) format('woff'), url(dist/0c96bc8fe7861c576cfee97fd1af3b2d.ttf) format('truetype');
+  src: url(dist/13c778b4e516e728a883a2f9c1606872.woff2) format('woff2'), url(dist/48247fb2230012c6f18ccef4c60208bf.woff) format('woff'), url(dist/a918d0d4efa82bcd404428e97b933b25.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Caligraphic';
-  src: url(dist/4519ba4c9ee4f9b689505e396b96d93c.woff2) format('woff2'), url(dist/4a559f36cc9a9ff50a2a5d8f8c7e5d07.woff) format('woff'), url(dist/35f3c951b5a1044753e0eb4183d55103.ttf) format('truetype');
+  src: url(dist/3f5d46fccdabd999330b96fa3754271e.woff2) format('woff2'), url(dist/bdf9b837cc72d077e02944e9fcda47e9.woff) format('woff'), url(dist/4ec4acf1f29004681007c4222285d23e.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Fraktur';
-  src: url(dist/5b8749ee09f3aa84381365edac89c624.woff2) format('woff2'), url(dist/2ea3916b4309d29ba6938ff96202f3a8.woff) format('woff'), url(dist/069514d4061bbc045836eaec100359b9.ttf) format('truetype');
+  src: url(dist/df40f734ebd7396509f1bded021d8c6b.woff2) format('woff2'), url(dist/6e777b1c03b095c759b5885c236f120c.woff) format('woff'), url(dist/dd0877ebec8f48a099708063de2a3af3.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Fraktur';
-  src: url(dist/2c629b06891ec24911f53781b38554fa.woff2) format('woff2'), url(dist/0d90113d64d307cfb9e44a81546e7608.woff) format('woff'), url(dist/96556db6d8effe29a581028d82c1ac04.ttf) format('truetype');
+  src: url(dist/ce898e4cf9b1d7e7c8ea6e48249d9795.woff2) format('woff2'), url(dist/325384968866dbe03ec934c6a000fb1e.woff) format('woff'), url(dist/d9979391edeea4fc2712a0bee8f1328c.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Main';
-  src: url(dist/20b90c2076172b223ae564a9bb22e0fc.woff2) format('woff2'), url(dist/a9cdbc850d2f94b8887ccf38fc6d6d85.woff) format('woff'), url(dist/07e762d041b580e5d32ae14a9cb27450.ttf) format('truetype');
+  src: url(dist/8d75a1e6ecd58a4eb9940ede7279c3a2.woff2) format('woff2'), url(dist/f39f77257d3598b25c4d6de65ca976fa.woff) format('woff'), url(dist/fa009f3b39d732e29b43629e08731367.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Main';
-  src: url(dist/b345de5bd14864bcefbff8f92de7a1c8.woff2) format('woff2'), url(dist/7649d52f66dfd41d2cee9aaaa0019ccd.woff) format('woff'), url(dist/bc8d96e9689171ea65cb379f7967fb4a.ttf) format('truetype');
+  src: url(dist/b7ed9854ec19978153f4c43b1e33e555.woff2) format('woff2'), url(dist/6496af04088456784f0bdeb1b206a834.woff) format('woff'), url(dist/cd9f7de501f4712d8395f408f87d2589.ttf) format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_Main';
-  src: url(dist/ab751a9e86a16f178b79f99db42d3ea2.woff2) format('woff2'), url(dist/e3954fe9b7efb3f438d218f6e8a8e049.woff) format('woff'), url(dist/44a32ae60521190623e30c98de29ef17.ttf) format('truetype');
+  src: url(dist/477273ae2349c76afee0bda356c3e25f.woff2) format('woff2'), url(dist/d0f5089f412907de2fd3804f6dec9161.woff) format('woff'), url(dist/8e740c89602084adfd96dc754e66f654.ttf) format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_Main';
-  src: url(dist/13b3f8528a571d1cb797eb520002dde9.woff2) format('woff2'), url(dist/9e75cd605a0f61540bc6894c330f1ef5.woff) format('woff'), url(dist/af7fc7b32dbf2a640c9c26b2a0a7d050.ttf) format('truetype');
+  src: url(dist/94c5cef0897080e2abc2c4016240df28.woff2) format('woff2'), url(dist/b6fd45af6cc2dd38df466371b3d2ebc5.woff) format('woff'), url(dist/1f59b6fa39fdefdd8d5d3c0e6d1a1068.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Math';
-  src: url(dist/d5d35e84b3ac1dbffd8fdc3dbea97849.woff2) format('woff2'), url(dist/94810ff68bb3c9cb6d3e9f3e73001b4e.woff) format('woff'), url(dist/4d6241be0cb599314b9ae4af29d68d38.ttf) format('truetype');
+  src: url(dist/d3d8666a4632abee40f4414585d92110.woff2) format('woff2'), url(dist/0bbce4d2239847d51ef618510405f213.woff) format('woff'), url(dist/58d4a875a5aab4cfeef8ef3cfe67fef9.ttf) format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_Math';
-  src: url(dist/ffda88030bb30ae4a0f437dd9f86add2.woff2) format('woff2'), url(dist/11278d3697e58b20e960ac9ee24ab338.woff) format('woff'), url(dist/cae7ea2682cff6985955cd2cf261504e.ttf) format('truetype');
+  src: url(dist/4fe95573161da2448789360783f39816.woff2) format('woff2'), url(dist/95efd25798405abac123add1b4eeca2d.woff) format('woff'), url(dist/a8101f5976ce6c54168148b48bd5ff52.ttf) format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_SansSerif';
-  src: url(dist/5a20a4753af7a150824ce63096b7acc3.woff2) format('woff2'), url(dist/2946bdb590f9bd4c7ba30978a7eafa68.woff) format('woff'), url(dist/f0ad0abc489e2942f9e185a885d31e0a.ttf) format('truetype');
+  src: url(dist/02293ffdf75b14c169db631a51110638.woff2) format('woff2'), url(dist/e20da50e1dda67ed7e88c09276a270cc.woff) format('woff'), url(dist/219aa2d692ab036bee6adfdebaf2d52b.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_SansSerif';
-  src: url(dist/e5fc2aef496040d3f44502045a9fa7f6.woff2) format('woff2'), url(dist/c834ba6da13819f078ec34f212d081e3.woff) format('woff'), url(dist/c7feacd514ed1bf5669a9a4ee68fe99b.ttf) format('truetype');
+  src: url(dist/652da4643001144184456ef7faf2015b.woff2) format('woff2'), url(dist/cd98aad09d106ffeef20b9bb36573f4d.woff) format('woff'), url(dist/ab042de625e5f6cb75185a6a53556fc1.ttf) format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_SansSerif';
-  src: url(dist/5bf289005d5caccd361ab39e3a94f3b7.woff2) format('woff2'), url(dist/a4fd05630bcdec90cc1a744cc7462c35.woff) format('woff'), url(dist/5af9e1cfc966c7b16e7615fa66a29955.ttf) format('truetype');
+  src: url(dist/39626825863f8ae552747a74f1614406.woff2) format('woff2'), url(dist/a7167350e99b92f405ae8801435494c3.woff) format('woff'), url(dist/927a3bab5c885b4747e4455e5d944c8a.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Script';
-  src: url(dist/a1c15978d325f10dcb49f0f8bd7055dd.woff2) format('woff2'), url(dist/cd3b0634cbb3864a6105cbc61511f48c.woff) format('woff'), url(dist/dd0db7aef0e4e809b61410ce74227665.ttf) format('truetype');
+  src: url(dist/330012c54cab64b6abfd8e861dbe36e7.woff2) format('woff2'), url(dist/914df03ff7507e9205a4ecd7e0cfea0d.woff) format('woff'), url(dist/ba6b006acc2d150f6bc4c28091c70357.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Size1';
-  src: url(dist/1876361fd46f2ba44d009dfd6fc09b83.woff2) format('woff2'), url(dist/c4ae0d259a8916db2002e0a18556c965.woff) format('woff'), url(dist/bbd9552cef932199b58e31fb907f8b18.ttf) format('truetype');
+  src: url(dist/c03114ec648cbd34e5226cd53e410ac2.woff2) format('woff2'), url(dist/4ee32d5b4bd0a456f02cdd89f0a1cfd0.woff) format('woff'), url(dist/6ca578961bf9f8cf4cd915db7048a245.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Size2';
-  src: url(dist/f516b73c4a7ccca3d1a761dee3133a87.woff2) format('woff2'), url(dist/635e9324cc2ad9bdbfb1d307c1c9c5b2.woff) format('woff'), url(dist/d1e8ff17527d885764046b575c601f0a.ttf) format('truetype');
+  src: url(dist/a136fd4c0c02449d27e20d6017d36078.woff2) format('woff2'), url(dist/9ebe93f9fe71c49b7ceda9c93c510155.woff) format('woff'), url(dist/1037f625f0d4e4b828b178837918f9ed.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Size3';
-  src: url(dist/1ef7adae735724bab211320dddae3f21.woff2) format('woff2'), url(dist/f32a9fde642521722ca1d952e1aa1834.woff) format('woff'), url(dist/5d632274432b02a0edebbfe5810cc988.ttf) format('truetype');
+  src: url(dist/5cce6e91e556438f05bc2903c0c0e568.woff2) format('woff2'), url(dist/a562474e7cb5eaa89d50a4db1e1025db.woff) format('woff'), url(dist/b6c1d32bceb9a905cbb280807caf3215.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Size4';
-  src: url(dist/4f012d6a01b53cb21970a91e4ad0e314.woff2) format('woff2'), url(dist/f668d5666b59392e88c787e700b5728f.woff) format('woff'), url(dist/1d1325964eb3838aa3086bb34e36a1cf.ttf) format('truetype');
+  src: url(dist/cf8982ba6667cc82989a020c8e8749c7.woff2) format('woff2'), url(dist/9e74796262fa0108b4d0f064d92d4306.woff) format('woff'), url(dist/97bb202f822b59c00fa4ed25ce6cb14b.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Typewriter';
-  src: url(dist/4f31d033d446bb37ed6054ae5d39bd22.woff2) format('woff2'), url(dist/d3c8e68f425df650554fab73fd14628f.woff) format('woff'), url(dist/b1d1af1a936d0174df3012bd14c56561.ttf) format('truetype');
+  src: url(dist/e613fbb875f1961b19acbde0799e684d.woff2) format('woff2'), url(dist/bbc3c89c9e69cab89642ddf1150018c2.woff) format('woff'), url(dist/ea67dc3c167e3d749122eddf7661d3eb.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -1612,12 +1612,13 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
   line-height: 1.2;
   text-indent: 0;
   text-rendering: auto;
+  border-color: currentColor;
 }
 .katex * {
   -ms-high-contrast-adjust: none !important;
 }
 .katex .katex-version::after {
-  content: "0.11.1";
+  content: "0.12.0";
 }
 .katex .katex-mathml {
   position: absolute;
@@ -1658,7 +1659,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 .katex .texttt {
   font-family: KaTeX_Typewriter;
 }
-.katex .mathdefault {
+.katex .mathnormal {
   font-family: KaTeX_Math;
   font-style: italic;
 }
@@ -1720,6 +1721,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 .katex .vlist-t {
   display: inline-table;
   table-layout: fixed;
+  border-collapse: collapse;
 }
 .katex .vlist-r {
   display: table-row;
@@ -1750,6 +1752,26 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
   font-size: 1px;
   width: 2px;
   min-width: 2px;
+}
+.katex .vbox {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: baseline;
+}
+.katex .hbox {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+}
+.katex .thinbox {
+  display: inline-flex;
+  flex-direction: row;
+  width: 0;
+  max-width: 0;
 }
 .katex .msupsub {
   text-align: left;
@@ -2496,6 +2518,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 }
 .katex-display.fleqn > .katex {
   text-align: left;
+  padding-left: 2em;
 }
 
 
