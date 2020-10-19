@@ -1,1 +1,1 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{973:function(n,o,e){var r={"./locale":553,"./locale.js":553};function t(n){var o=c(n);return e(o)}function c(n){if(!e.o(r,n)){var o=new Error("Cannot find module '"+n+"'");throw o.code="MODULE_NOT_FOUND",o}return r[n]}t.keys=function(){return Object.keys(r)},t.resolve=c,n.exports=t,t.id=973}}]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{1056:function(o,n,w){n.fromMarkdown=w(126),n.toMarkdown=w(127)}}]);
