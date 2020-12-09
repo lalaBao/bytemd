@@ -6,6 +6,7 @@
   import { onMount, createEventDispatcher, onDestroy, tick } from 'svelte';
   import debounce from 'lodash.debounce';
   import Toolbar from './toolbar.svelte';
+  import Status from './status.svelte';
   import Viewer from './viewer.svelte';
 
   export let value: EditorProps['value'] = '';
@@ -260,4 +261,5 @@
       <Viewer {...viewerProps} on:ast={updateAst} />
     </div>
   </div>
+  <Status {value} />
 </div>
