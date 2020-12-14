@@ -1,5 +1,6 @@
 import type { BytemdToolbarItem, EditorProps } from './types';
 import { icons } from './icons';
+import { util } from 'prettier';
 
 const builtinMap: Record<string, BytemdToolbarItem> = {
   h1: {
@@ -27,14 +28,14 @@ const builtinMap: Record<string, BytemdToolbarItem> = {
     tooltip: 'Bold',
     icon: icons.bold,
     onClick({ utils }) {
-      utils.replaceText((text) => '**' + text + '**');
+      utils.wrapText('**');
     },
   },
   italic: {
     tooltip: 'Italic',
     icon: icons.italic,
     onClick({ utils }) {
-      utils.replaceText((text) => '_' + text + '_');
+      utils.wrapText('*');
     },
   },
   quote: {
@@ -47,25 +48,30 @@ const builtinMap: Record<string, BytemdToolbarItem> = {
   link: {
     tooltip: 'Link',
     icon: icons.link,
-    onClick({ editor }) {
+    onClick({ editor, utils }) {
       if (editor.somethingSelected()) {
-        const text = editor.getSelection();
-        editor.replaceSelection(`[${text}](url)`);
-        const { line, ch } = editor.getCursor();
-        editor.setSelection({ line, ch: ch - 4 }, { line, ch: ch - 1 });
+        utils.wrapText('[', '](url)');
+        const cursor = editor.getCursor();
+        editor.setSelection(
+          {
+            line: cursor.line,
+            ch: cursor.ch + 2,
+          },
+          {
+            line: cursor.line,
+            ch: cursor.ch + 5,
+          }
+        );
       } else {
-        editor.replaceRange('[](url)', editor.getCursor());
-        const { line, ch } = editor.getCursor();
-        editor.setCursor({ line, ch: ch - 6 });
+        utils.wrapText('[', '](url)');
       }
-      editor.focus();
     },
   },
   code: {
-    tooltip: 'Code',
+    tooltip: 'Code<br/>Markdown: `code`',
     icon: icons.code,
     onClick({ utils }) {
-      utils.replaceText((text) => '`' + text + '`');
+      utils.wrapText('`');
     },
   },
   codeBlock: {

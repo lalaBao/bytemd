@@ -8,7 +8,13 @@
 
   onMount(() => {
     if (tooltip) {
-      tippy(el, { content: tooltip, delay: 100 });
+      tippy(el, {
+        content: tooltip,
+        animation: 'scale',
+        animateFill: false,
+        duration: 100,
+        delay: 300,
+      });
     }
   });
 
