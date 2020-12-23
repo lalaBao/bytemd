@@ -1,6 +1,7 @@
 import type { BytemdPlugin } from 'bytemd';
 import type { Mermaid } from 'mermaid';
 import type mermaidAPI from 'mermaid/mermaidAPI';
+import { icons } from './icons';
 
 export default function mermaid(options?: mermaidAPI.Config): BytemdPlugin {
   let m: Mermaid;
@@ -43,6 +44,21 @@ export default function mermaid(options?: mermaidAPI.Config): BytemdPlugin {
           }
         });
       })();
+    },
+    toolbar: {
+      mermaid: {
+        tooltip: 'Mermaid diagram',
+        icon: icons.mermaid,
+        onClick({ editor, utils }) {
+          const { startLine } = utils.appendBlock(
+            '```mermaid\ngraph LR\nA--->B\n```'
+          );
+          editor.setSelection(
+            { line: startLine + 1, ch: 0 }, // @ts-ignore
+            { line: startLine + 2 }
+          );
+        },
+      },
     },
   };
 }

@@ -1,20 +1,20 @@
 <script lang="ts">
   import type { Editor } from 'codemirror';
   import type {} from 'codemirror/addon/display/placeholder';
-  import type { Root } from 'mdast';
+  import type { Root, Element } from 'hast';
   import type { BytemdPlugin, EditorProps, ViewerProps } from './types';
   import { onMount, createEventDispatcher, onDestroy, tick } from 'svelte';
-  import debounce from 'lodash.debounce';
+  import { debounce, throttle } from 'lodash-es';
   import Toolbar from './toolbar.svelte';
   import Status from './status.svelte';
   import Viewer from './viewer.svelte';
+  import { createUtils } from './editor';
 
   export let value: EditorProps['value'] = '';
   export let plugins: EditorProps['plugins'];
   export let sanitize: EditorProps['sanitize'];
   export let mode: EditorProps['mode'] = 'split';
   export let previewDebounce: EditorProps['previewDebounce'] = 300;
-  export let toolbar: EditorProps['toolbar'];
   export let editorConfig: EditorProps['editorConfig'];
 
   let el: HTMLElement;
@@ -29,7 +29,7 @@
   let activeTab = 0;
   let fullscreen = false;
 
-  $: context = { editor, $el: el };
+  $: context = { editor, $el: el, utils: createUtils(editor) };
 
   let cbs: ReturnType<NonNullable<BytemdPlugin['editorEffect']>>[] = [];
   const dispatch = createEventDispatcher();
@@ -56,6 +56,7 @@
         break;
       }
     }
+    startIndex = Math.max(startIndex, 0); // ensure >= 0
     return startIndex;
   }
 
@@ -78,7 +79,7 @@
           (rightPs[startIndex + 1] - rightPs[startIndex])) /
           (leftPs[startIndex + 1] - leftPs[startIndex]) +
         rightPs[startIndex];
-      // const rightRatio = rightPs[startIndex];
+      // const rightRatio = rightPs[startIndex]; // for testing
 
       previewEl.scrollTo(
         0,
@@ -94,6 +95,8 @@
     }
 
     requestAnimationFrame(() => {
+      updateBlockPositions();
+
       const rightRatio =
         previewEl.scrollTop / (previewEl.scrollHeight - previewEl.clientHeight);
 
@@ -144,44 +147,42 @@
     });
   }
 
-  let mdast: Root;
+  let hast: Root;
   let leftPs: number[];
   let rightPs: number[];
 
-  function updateAst({ detail }: { detail: Root }) {
-    mdast = detail;
+  function updateHast({ detail }: { detail: Root }) {
+    hast = detail;
   }
-  function updateBlockPositions() {
+
+  const updateBlockPositions = throttle(() => {
     leftPs = [];
     rightPs = [];
 
     const scrollInfo = editor.getScrollInfo();
     const body = previewEl.querySelector<HTMLElement>('.markdown-body')!;
 
-    let hasYaml = mdast.children[0]?.type === 'yaml';
+    const leftNodes = hast.children.filter(
+      (v) => v.type === 'element'
+    ) as Element[];
+    const rightNodes = [...body.childNodes].filter(
+      (v) => v instanceof HTMLElement
+    ) as HTMLElement[];
 
-    for (let i = 0; i < mdast.children.length; i++) {
-      const node = mdast.children[i];
+    for (let i = 0; i < leftNodes.length; i++) {
+      const leftNode = leftNodes[i];
+      const rightNode = rightNodes[i];
 
-      // merge yaml and the second node
-      if (hasYaml) {
-        if (i === 0) {
-          leftPs.push(0);
-          rightPs.push(0);
-          continue;
-        }
-        if (i === 1) {
-          continue;
-        }
+      // if there is no position info, move to the next node
+      if (!leftNode.position) {
+        continue;
       }
 
-      const rightIndex = hasYaml ? i - 1 : i;
       const left =
-        editor.heightAtLine(node.position!.start.line - 1, 'local') /
+        editor.heightAtLine(leftNode.position.start.line - 1, 'local') /
         (scrollInfo.height - scrollInfo.clientHeight);
       const right =
-        ((body.children[rightIndex] as HTMLElement).offsetTop -
-          body.offsetTop) /
+        (rightNode.offsetTop - body.offsetTop) /
         (previewEl.scrollHeight - previewEl.clientHeight);
 
       if (left >= 1 || right >= 1) {
@@ -190,17 +191,12 @@
 
       leftPs.push(left);
       rightPs.push(right);
-
-      if (node.type === 'footnoteDefinition') {
-        // reach the last
-        break;
-      }
     }
 
     leftPs.push(1);
     rightPs.push(1);
     // console.log(leftPs, rightPs);
-  }
+  }, 1000);
 
   onMount(async () => {
     const [codemirror] = await Promise.all([
@@ -242,7 +238,6 @@
     {mode}
     {activeTab}
     {plugins}
-    {toolbar}
     {fullscreen}
     on:tab={setActiveTab}
     on:fullscreen={() => {
@@ -258,7 +253,7 @@
       bind:this={previewEl}
       class="bytemd-preview"
       style={mode === 'tab' && activeTab === 0 ? 'display:none' : undefined}>
-      <Viewer {...viewerProps} on:ast={updateAst} />
+      <Viewer {...viewerProps} on:hast={updateHast} />
     </div>
   </div>
   <Status {value} />

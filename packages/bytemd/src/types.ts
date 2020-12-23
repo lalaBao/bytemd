@@ -2,6 +2,7 @@ import type { Processor } from 'unified';
 import type { Schema } from 'hast-util-sanitize';
 import type { VFile } from 'vfile';
 import type { Editor, EditorConfiguration } from 'codemirror';
+import type { EditorUtils } from './editor';
 
 export interface EditorContext {
   /**
@@ -12,6 +13,10 @@ export interface EditorContext {
    * Root element, `$('.bytemd')`
    */
   $el: HTMLElement;
+  /**
+   * Utilities for Editor
+   */
+  utils: EditorUtils;
 }
 
 export interface ViewerContext {
@@ -79,14 +84,15 @@ export interface EditorProps extends ViewerProps {
    * Debounce time (ms) for preview
    */
   previewDebounce?: number;
-  /**
-   * Specify visible toolbar items and their orders
-   *
-   * Default: Show all available items, order: built-in -> plugin by apply order
-   */
-  toolbar?:
-    | string[]
-    | ((itemMap: Record<string, BytemdToolbarItem>) => string[]);
+  // TODO:
+  // /**
+  //  * Specify visible toolbar items and their orders
+  //  *
+  //  * Default: Show all available items, order: built-in -> plugin by apply order
+  //  */
+  // toolbar?:
+  //   | string[]
+  //   | ((itemMap: Record<string, BytemdToolbarItem>) => string[]);
   /**
    * CodeMirror editor config
    *

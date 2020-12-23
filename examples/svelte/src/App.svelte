@@ -45,17 +45,8 @@
     'medium-zoom': true,
   };
 
-  function toDataUrl(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.addEventListener('load', (e) => {
-        resolve(e.target.result);
-      });
-      reader.addEventListener('error', (e) => {
-        reject(new Error('readAsDataURL error'));
-      });
-      reader.readAsDataURL(file);
-    });
+  function toBlobUrl(file) {
+    return URL.createObjectURL(file);
   }
 
   $: plugins = [
@@ -68,7 +59,7 @@
     enabled['import-image'] &&
       importImage({
         upload(files) {
-          return Promise.all(files.map((file) => toDataUrl(file)));
+          return Promise.all(files.map((file) => toBlobUrl(file)));
         },
       }),
     enabled.frontmatter && frontmatter(),
@@ -91,6 +82,11 @@
     //   },
     // },
   ].filter((x) => x);
+
+  function sanitize(schema) {
+    schema.protocols.src.push('blob');
+    return schema;
+  }
 </script>
 
 <style>
@@ -101,6 +97,10 @@
   .line {
     margin: 10px 0;
     text-align: center;
+  }
+  :global(body) {
+    margin: 0 10px;
+    font-size: 14px;
   }
   :global(.bytemd) {
     height: calc(100vh - 100px);
@@ -127,5 +127,5 @@
       <label> <input type="checkbox" bind:checked={enabled[p]} /> {p} </label>
     {/each}
   </div>
-  <Editor {value} {mode} {plugins} on:change={handleChange} />
+  <Editor {value} {mode} {plugins} {sanitize} on:change={handleChange} />
 </div>

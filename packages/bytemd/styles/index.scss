@@ -1,5 +1,6 @@
 @import '~codemirror/lib/codemirror.css';
 @import '~tippy.js/dist/tippy.css';
+@import '~tippy.js/animations/scale.css';
 @import '~@primer/css/support/variables/color-system.scss';
 
 .bytemd {
@@ -62,13 +63,19 @@
   height: 100%;
   .CodeMirror {
     height: 100%;
-    padding: 12px;
     box-sizing: border-box;
     font-size: 14px;
     line-height: 1.5;
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     pre.CodeMirror-placeholder {
       color: $gray-400;
+    }
+    .CodeMirror-lines {
+      padding: 16px 0;
+    }
+    pre.CodeMirror-line,
+    pre.CodeMirror-line-like {
+      padding: 0 16px;
     }
   }
 }
